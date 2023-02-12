@@ -42,5 +42,31 @@ class PersonTest {
         assertEquals(24.67, avgAges[1], 0.1);
     }
 
-    
+    @Test
+    public void testNoHombres() {
+        List<Person> people = new ArrayList<>();
+        Person p1 = new Person("Jane", 22, "Female");
+        Person p2 = new Person("Joan", 28, "Female");
+        Person p3 = new Person("Jill", 24, "Female");
+
+        List<Person> people2 = Arrays.asList(p1, p2, p3);
+
+        double [] avgAges = p1.averageAgePerGender(people2);
+        assertEquals(0.0, avgAges[0], 0.1);
+        assertEquals(24.67, avgAges[1], 0.1);
+    }
+
+    @Test
+    public void testNoMujeres() {
+        List<Person> people = new ArrayList<>();
+        Person p1 = new Person("Jane", 22, "Male");
+        Person p2 = new Person("Joan", 28, "Male");
+        Person p3 = new Person("Jill", 24, "Male");
+
+        List<Person> people2 = Arrays.asList(p1, p2, p3);
+
+        double [] avgAges = p1.averageAgePerGender(people2);
+        assertEquals(24.67, avgAges[0], 0.1);
+        assertEquals(0.0, avgAges[1], 0.1);
+    }
 }

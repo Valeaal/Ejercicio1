@@ -41,7 +41,12 @@ public class Person {
                 edadmujeres += act.age;
             }
         }
-        double res[] = {(double) edadhombres/hombres, (double) edadmujeres/mujeres};
+
+        double avgAgeHombres = hombres == 0 ? 0 : (double) edadhombres/hombres;
+        double avgAgeMujeres = mujeres == 0 ? 0 : (double) edadmujeres/mujeres;
+
+        double res[] = {avgAgeHombres, avgAgeMujeres};
         return res;
     }
+
 }
