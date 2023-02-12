@@ -6,26 +6,49 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+
+ Clase PersonTest para probar la clase Person
+ Esta clase contiene métodos que permiten probar los métodos de la clase Person.
+ Se incluyen pruebas para verificar el nombre, la edad y el género de una persona, así como
+ la media de edad por género en una lista de personas.
+ */
 class PersonTest {
 
+    /**
+     Método que prueba el método getName de la clase Person
+     Este método crea una persona y verifica que su nombre sea el esperado.
+     */
     @Test
     void TestNombre() {
         Person person = new Person("John Doe", 30, "Male");
         assertEquals("John Doe", person.getName());
     }
 
+    /**
+     Método que prueba el método getAge de la clase Person
+     Este método crea una persona y verifica que su edad sea la esperada.
+     */
     @Test
     void TestEdad() {
         Person person = new Person("Jane Doe", 25, "Female");
         assertEquals(25, person.getAge());
     }
 
+    /**
+     Método que prueba el método getGender de la clase Person
+     Este método crea una persona y verifica que su género sea el esperado.
+     */
     @Test
     void TestGenero() {
         Person person = new Person("John Doe", 30, "Male");
         assertEquals("Male", person.getGender());
     }
 
+    /**
+     Método que prueba el método averageAgePerGender de la clase Person
+     Este método crea una lista de personas y verifica que la media de edad por género sea la esperada.
+     */
     @Test
     void TestEdadNormal() {
         Person p1 = new Person("John", 25, "Male");
@@ -42,6 +65,10 @@ class PersonTest {
         assertEquals(24.67, avgAges[1], 0.1);
     }
 
+    /**
+     Método que prueba el método averageAgePerGender cuando no hay hombres en la lista
+     Este método crea una lista de mujeres y verifica que la media de edad de los hombres sea 0
+    */
     @Test
     public void testNoHombres() {
         List<Person> people = new ArrayList<>();
@@ -56,6 +83,10 @@ class PersonTest {
         assertEquals(24.67, avgAges[1], 0.1);
     }
 
+    /**
+     Método que prueba el método averageAgePerGender cuando no hay mujeres en la lista
+     Este método crea una lista de hombres y verifica que la media de edad de las mujeres sea 0
+     */
     @Test
     public void testNoMujeres() {
         List<Person> people = new ArrayList<>();
