@@ -50,7 +50,7 @@ class PersonTest {
      Este método crea una lista de personas y verifica que la media de edad por género sea la esperada.
      */
     @Test
-    void TestEdadNormal() {
+    void TestEdadMixto() {
         Person p1 = new Person("John", 25, "Male");
         Person p2 = new Person("Jane", 22, "Female");
         Person p3 = new Person("Jim", 30, "Male");
